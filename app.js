@@ -1,8 +1,12 @@
 const express = require("express");
 const rotaLivro = require("./rotas/livro.js")
+const cors = require("cors")
 
 const app = express();
 app.use(express.json());
+app.use(cors({
+    origin: "*"
+}))
 
 app.use('/livros', rotaLivro)
 
