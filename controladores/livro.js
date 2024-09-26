@@ -75,8 +75,9 @@ function patchLivro(req, res) {
 
 function deleteLivro(req, res) {
     try {
+        const id = req.params.id;
+
         if (id && Number(id)) {
-            const id = req.params.id;
             deletaLivroPorId(id)
             res.send("Livro deletado com sucesso");
         } else {
